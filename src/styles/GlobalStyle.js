@@ -5,6 +5,7 @@ const GlobalStyles = StyleSheet.create({
         backgroundColor : 'white',
         flex: 1,
         color : 'black',
+        paddingHorizontal: 14,
 
     },
 });
