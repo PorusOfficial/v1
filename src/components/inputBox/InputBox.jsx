@@ -1,24 +1,46 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { TextInput } from 'react-native';
-const InputBox = () => {
+import Theme from '../../styles/theme';
+
+const InputBox = ({placeholder, Icon, type = false}) => {
   return (
-    <View>
-      <TextInput placeholder="Enter somethings..." placeholderTextColor={'black'} style = {styles.input} />
+    <View style={styles.inputBox} >
+      <Icon />
+      <TextInput
+        placeholder={placeholder}
+        placeholderTextColor={'#5B5A5A'}
+        style = {styles.input}
+        secureTextEntry={type}
+        numberOfLines={1}
+        multiline={false}
+      />
     </View>
+
   );
 };
 
 export default InputBox;
 
 const styles = StyleSheet.create({
-    input: {
+    inputBox: {
         height: 60,
         borderWidth: 1,
         borderRadius : 15,
-        padding: 10,
-        fontSize: 20,
-        fontWeight: '500'
+        paddingHorizontal: 10,
+        flexDirection : 'row',
+        gap : 10,
+        alignItems: 'center',
+        borderColor : Theme.colors.secondaryTxtColor,
+        overflow: 'scroll',
+      },
+      input: {
+        bordermWidth: 0,
+        flex: 1,
+        fontSize: 18,
+        fontWeight: '500',
+        color : 'black',
+        letterSpacing: 0.5,
       },
 
 

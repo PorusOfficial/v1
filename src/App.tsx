@@ -3,13 +3,18 @@ import {View, StyleSheet} from 'react-native';
 import GlobalStyles from './styles/GlobalStyle';
 import CustomButton from './components/button/CustomButton';
 import InputBox from './components/inputBox/InputBox';
+import UserIcon from './assets/icons/UserIcon';
+import LockIcon from './assets/icons/LockIcon';
 const App = ()=>{
 
   return(
     <View style={[GlobalStyles.body,styles.container]}>
-
+      <View style={{gap: 30}}>
+        <InputBox placeholder={'Mobile or email'} Icon={UserIcon}/>
+        <InputBox placeholder={'Enter password'} Icon={LockIcon} type={true}/>
+      </View>
       <CustomButton name={'Log in'} onPress={()=>1}/>
-      <InputBox />
+
     </View>
   );
 };
@@ -20,7 +25,7 @@ const styles = StyleSheet.create({
     flex : 1,
     justifyContent : 'center',
     //alignItems: 'center',
-    gap : 10,
+    gap : 50,
   },
   txt : {
     fontSize : 30,
