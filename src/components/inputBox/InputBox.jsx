@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor : Theme.colors.secondaryTxtColor,
         overflow: 'scroll',
+        backgroundColor: '#EEECEC',
       },
       input: {
         bordermWidth: 0,

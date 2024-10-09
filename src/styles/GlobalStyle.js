@@ -8,6 +8,27 @@ const GlobalStyles = StyleSheet.create({
         paddingHorizontal: 14,
 
     },
+    InriaBold: {
+        fontFamily: 'InriaSans-Bold',
+        fontSize: 40,
+        color: 'black',
+        letterSpacing:2,
+        
+      },
+
+    InriaLight: {
+        fontFamily: 'InriaSans-Light',
+        fontSize: 40,
+        color: 'black',
+    },
+    InriaRegular: {
+        fontFamily: 'InriaSans-Regular',
+        fontSize: 40,
+        color: 'black',
+
+    },
+
+
 });
 
 export default GlobalStyles;
