@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, StyleSheet, StatusBar} from 'react-native';
 import GlobalStyles from './styles/GlobalStyle';
-
-import LogIn from './screens/LogIn';
+//import OtpVerificationScreen from './screens/OtpVerificationScreen';
+//import LogIn from './screens/LogIn';
+import ProfileSetups from './screens/ProfileSetups';
 const App = ()=>{
 
   return(
@@ -11,7 +12,8 @@ const App = ()=>{
         backgroundColor="#fff"
         barStyle={'dark-content'}
       />
-      <LogIn />
+      {/*<LogIn /> <OtpVerificationScreen /> */}
+      <ProfileSetups />
     </View>
   );
 };
