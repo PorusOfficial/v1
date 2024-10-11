@@ -2,6 +2,7 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { TextInput } from 'react-native';
 import Theme from '../../styles/theme';
+import GlobalStyles from '../../styles/GlobalStyle';
 
 const InputBox = ({placeholder, Icon, type = false}) => {
   return (
@@ -10,7 +11,7 @@ const InputBox = ({placeholder, Icon, type = false}) => {
       <TextInput
         placeholder={placeholder}
         placeholderTextColor={'#5B5A5A'}
-        style = {styles.input}
+        style = {[GlobalStyles.InterRegular, styles.input]}
         secureTextEntry={type}
         numberOfLines={1}
         multiline={false}
@@ -39,7 +40,6 @@ const styles = StyleSheet.create({
         bordermWidth: 0,
         flex: 1,
         fontSize: 18,
-        fontWeight: '500',
         color : 'black',
         letterSpacing: 0.5,
       },

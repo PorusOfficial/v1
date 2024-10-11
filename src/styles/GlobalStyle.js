@@ -2,18 +2,17 @@ import { StyleSheet } from 'react-native';
 
 const GlobalStyles = StyleSheet.create({
     body : {
+        flex : 1,
         backgroundColor : 'white',
-        flex: 1,
-        color : 'black',
-        paddingHorizontal: 14,
+        paddingHorizontal: 10,
+        margin  : 0,
 
     },
     InriaBold: {
         fontFamily: 'InriaSans-Bold',
         fontSize: 40,
         color: 'black',
-        letterSpacing:2,
-        
+        letterSpacing:1.5,
       },
 
     InriaLight: {
@@ -24,6 +23,12 @@ const GlobalStyles = StyleSheet.create({
     InriaRegular: {
         fontFamily: 'InriaSans-Regular',
         fontSize: 40,
+        color: 'black',
+
+    },
+    InterRegular: {
+        fontFamily: 'InterRegular',
+        fontSize: 14,
         color: 'black',
 
     },

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Theme from '../../styles/theme';
 
 
-const CustomButton = ({name, onPress}) => {
+const PrimaryButton = ({name, onPress}) => {
 
   return (
     <Pressable
@@ -13,7 +13,7 @@ const CustomButton = ({name, onPress}) => {
         { backgroundColor: pressed ? '#333333' : Theme.colors.primary },
       ]}
     >
-      <Text style={styles.text}>{name}</Text>
+      <Text style={styles.btnName}>{name}</Text>
     </Pressable>
   );
 };
@@ -33,11 +33,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
+  btnName: {
     color: Theme.colors.text,
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: '600',
+    letterSpacing : 1,
   },
 });
 
-export default CustomButton;
+export default PrimaryButton;
