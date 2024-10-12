@@ -1,4 +1,7 @@
 import {
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -11,10 +14,17 @@ import InputBox from '../components/inputBox/InputBox';
 import PrimaryButton from '../components/button/PrimaryButton';
 
 const ProfileSetups = () => {
-   function emptyIcon(){
-    return(<></>);
-   }
+  function emptyIcon() {
+    return <></>;
+  }
+
   return (
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{flex: 1}}
+    >
+      <ScrollView
+        contentContainerStyle={{flexGrow: 1, gap: 30, paddingBottom: 30}}>
         <View style={[GlobalStyles.body, {gap: 30, top: 70}]}>
           <Text style={[GlobalStyles.InriaBold, {fontSize: 38}]}>
             Setup your profile
@@ -30,6 +40,7 @@ const ProfileSetups = () => {
             <View style={styles.progressBox} />
             <View style={[styles.progressBox]} />
           </View>
+
           <View style={{flexDirection: 'row'}}>
             <View style={styles.profileImg}>
               <Text
@@ -41,7 +52,11 @@ const ProfileSetups = () => {
               <Text
                 style={[
                   GlobalStyles.InterRegular,
-                  {fontWeight: '600', letterSpacing: 1, textAlign: 'left'},
+                  {
+                    fontWeight: '600',
+                    letterSpacing: 1,
+                    textAlign: 'left',
+                  },
                 ]}>
                 Set your profile picture
               </Text>
@@ -53,7 +68,9 @@ const ProfileSetups = () => {
               />
             </View>
           </View>
+
           <InputBox placeholder={'Enter Name'} Icon={emptyIcon} />
+
           <View>
             <InputBox placeholder={'Choose username'} Icon={emptyIcon} />
             <Text
@@ -64,8 +81,12 @@ const ProfileSetups = () => {
               *username already exits.
             </Text>
           </View>
-          <PrimaryButton name={'Next'} onPress={() => ' '} />
+          <View style={{marginBottom: 50}}>
+            <PrimaryButton name={'Next'} onPress={() => ' '} />
+          </View>
         </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
