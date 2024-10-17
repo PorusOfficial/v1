@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import GlobalStyles from '../styles/GlobalStyle';
 import Theme from '../styles/theme';
 import SecondaryButtonWithIcon from '../components/button/SecondaryButtonWithIcon';
@@ -14,6 +14,9 @@ import InputBox from '../components/inputBox/InputBox';
 import PrimaryButton from '../components/button/PrimaryButton';
 
 const ProfileSetups = () => {
+  const [name, setName] = useState('');
+  const [userName, setuserName] = useState('');
+
   function emptyIcon() {
     return <></>;
   }
@@ -69,10 +72,10 @@ const ProfileSetups = () => {
             </View>
           </View>
 
-          <InputBox placeholder={'Enter Name'} Icon={emptyIcon} />
+          <InputBox placeholder={'Enter Name'} Icon={emptyIcon} value={name} setValue={setName} />
 
           <View>
-            <InputBox placeholder={'Choose username'} Icon={emptyIcon} />
+            <InputBox placeholder={'Choose username'} Icon={emptyIcon} value={userName} setValue={setuserName}/>
             <Text
               style={[
                 GlobalStyles.InterRegular,

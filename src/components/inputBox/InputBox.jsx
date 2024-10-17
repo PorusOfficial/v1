@@ -4,7 +4,7 @@ import { TextInput } from 'react-native';
 import Theme from '../../styles/theme';
 import GlobalStyles from '../../styles/GlobalStyle';
 
-const InputBox = ({placeholder, Icon, type = false}) => {
+const InputBox = ({placeholder, Icon, type = false, value, setValue}) => {
   return (
     <View style={styles.inputBox} >
       <Icon />
@@ -15,6 +15,8 @@ const InputBox = ({placeholder, Icon, type = false}) => {
         secureTextEntry={type}
         numberOfLines={1}
         multiline={false}
+        value={value}
+        onChangeText={setValue}
       />
     </View>
 

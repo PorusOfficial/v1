@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import GlobalStyles from '../styles/GlobalStyle';
 import InputBox from '../components/inputBox/InputBox';
 import PrimaryButton from '../components/button/PrimaryButton';
@@ -14,7 +14,8 @@ import UserIcon from '../assets/icons/UserIcon';
 import SecondaryButton from '../components/button/SecondaryButton';
 import FbIcon from '../assets/icons/FbIcon';
 import GIcon from '../assets/icons/GIcon';
-const LogIn = () => {
+const LogInScreen = () => {
+  const [emailOrMobile, setEmailOrMobile] = useState('');
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -45,7 +46,7 @@ const LogIn = () => {
         </View>
 
         <View style={{flex: 2, padding: 3, gap: 35, marginTop: 30}}>
-          <InputBox placeholder={'mobile or email'} Icon={UserIcon} />
+          <InputBox placeholder={'mobile or email'} Icon={UserIcon} value={emailOrMobile} setValue={setEmailOrMobile}/>
           <View style={{gap: 5}}>
             <PrimaryButton name={'Log in'} onPress={() => ' '} />
             <Text
@@ -103,7 +104,7 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default LogInScreen;
 
 const styles = StyleSheet.create({
   main: {

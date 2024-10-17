@@ -3,17 +3,17 @@ import {View, StyleSheet, StatusBar} from 'react-native';
 import GlobalStyles from './styles/GlobalStyle';
 //import OtpVerificationScreen from './screens/OtpVerificationScreen';
 //import LogIn from './screens/LogIn';
-import ProfileSetups from './screens/ProfileSetups';
+//import ProfileSetups from './screens/ProfileSetups';
+import BottomSheet from './components/bottomSheet/BottomSheet';
 const App = ()=>{
 
   return(
-    <View style={[GlobalStyles.body,styles.container]}>
+    <View style={styles.container}>
        <StatusBar
         backgroundColor="#fff"
         barStyle={'dark-content'}
       />
-      {/*<LogIn /> <OtpVerificationScreen /> */}
-      <ProfileSetups />
+      <BottomSheet />
     </View>
   );
 };
@@ -21,9 +21,12 @@ const App = ()=>{
 const styles = StyleSheet.create({
 
   container :{
-   // paddingTop: StatusBar.currentHeight,
-    flex : 1,
+
+      flex : 1,
+      backgroundColor : 'white',
+
   },
+ 
   txt : {
     fontSize : 30,
     fontWeight : '500',
