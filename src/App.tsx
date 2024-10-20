@@ -1,20 +1,25 @@
 import React from 'react';
 import {View, StyleSheet, StatusBar} from 'react-native';
-import GlobalStyles from './styles/GlobalStyle';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+//import GlobalStyles from './styles/GlobalStyle';
 //import OtpVerificationScreen from './screens/OtpVerificationScreen';
-//import LogIn from './screens/LogIn';
 //import ProfileSetups from './screens/ProfileSetups';
-import BottomSheet from './components/bottomSheet/BottomSheet';
+//import BottomSheet from './components/bottomSheet/BottomSheet';
+import PostDetailsScreen from './screens/PostDetailsScreen';
+
 const App = ()=>{
 
   return(
+    <GestureHandlerRootView style={{flex : 1}}>
+
     <View style={styles.container}>
        <StatusBar
         backgroundColor="#fff"
         barStyle={'dark-content'}
       />
-      <BottomSheet />
+      <PostDetailsScreen />
     </View>
+    </GestureHandlerRootView>
   );
 };
 
