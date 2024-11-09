@@ -191,7 +191,7 @@ const Description = () => {
       </Text>
 
       <FlatList
-      scrollEnabled={false}
+        scrollEnabled={false}
         data={data}
         renderItem={renderItem}
         keyExtractor={item => item.time}

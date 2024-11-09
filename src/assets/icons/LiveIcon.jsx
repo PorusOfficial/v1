@@ -1,6 +1,5 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
-import Theme from '../../styles/theme';
 
 const LiveIcon = ({width = 30, height = 30}) => {
   return (

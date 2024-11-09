@@ -13,11 +13,11 @@ const ShareIcon = ({ width = 30, height = 30 }) => {
     >
       <Path
         d="M12 5v8.5M15 7l-3-3l-3 3m-4 5v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"
-        fill="none" // Specify fill for the path if necessary
-        stroke={Theme.colors.IconColor} // Use theme color for stroke
-        strokeLinecap="round" // Change to camelCase
-        strokeLinejoin="round" // Change to camelCase
-        strokeWidth="2" // Change to camelCase
+        fill="none"
+        stroke={Theme.colors.IconColor}
+        strokeLinecap="round"
+        strokeLinejoin="round" 
+        strokeWidth="2" 
       />
     </Svg>
   );
