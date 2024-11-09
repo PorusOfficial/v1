@@ -9,6 +9,7 @@ const Theme = {
         IconColor : 'black',
         secondaryTxtColor : '#A29292',
     },
+    
 
 };
 

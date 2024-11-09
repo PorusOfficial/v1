@@ -3,11 +3,11 @@ import {StyleSheet, View, Text} from 'react-native';
 import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 
 
-const CustomBottomSheet = ({ children }) => {
+const CustomBottomSheet = ({ children, snapPoint }) => {
   const sheetRef = useRef(null);
 
 
-  const snapPoints = useMemo(() => ['40%', '50%', '70%'], []);
+  const snapPoints = useMemo(() => snapPoint , [snapPoint]);
 
   return (
       <BottomSheet
@@ -16,7 +16,6 @@ const CustomBottomSheet = ({ children }) => {
         snapPoints={snapPoints}
         enableDynamicSizing={false}
         backgroundStyle={[{backgroundColor: '#F1F1FA'}, styles.bottomSheet]}
-        style={{ paddingHorizontal : 10,}}
         handleComponent={null}
       >
           <View style={styles.line} />
@@ -38,16 +37,11 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 40,
     paddingTop : 20,
   },
-  contentContainer: {},
-  itemContainer: {
-    padding: 6,
-    margin: 6,
-    backgroundColor: '#eee',
-  },
+
   line :{
     backgroundColor : 'grey',
     width : 80,
-    height: 10,
+    height: 5,
     alignSelf: 'center',
     top : 10,
     borderRadius : 10,
