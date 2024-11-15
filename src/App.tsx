@@ -6,6 +6,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 //import ProfileSetups from './screens/ProfileSetups';
 //import BottomSheet from './components/bottomSheet/BottomSheet';
 import PostDetailsScreen from './screens/PostDetailsScreen';
+import HomeScreen from './screens/HomeScreen';
 
 const App = ()=>{
 
@@ -17,7 +18,8 @@ const App = ()=>{
         backgroundColor="#fff"
         barStyle={'dark-content'}
       />
-      <PostDetailsScreen />
+      {/* <PostDetailsScreen /> */}
+      <HomeScreen />
     </View>
     </GestureHandlerRootView>
   );
