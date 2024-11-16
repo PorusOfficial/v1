@@ -67,10 +67,11 @@ const styles = StyleSheet.create({
     },
     contentContainer: {
         flex: 1,
-        paddingHorizontal: 24,
+        paddingHorizontal: 10,
         paddingBottom: 40,
         justifyContent: 'flex-end',
         marginBottom: 30,
+        width: '100%'
     },
     titleText: {
         fontSize: 40,
