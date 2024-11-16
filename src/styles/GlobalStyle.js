@@ -30,8 +30,21 @@ const GlobalStyles = StyleSheet.create({
         fontFamily: 'InterRegular',
         fontSize: 14,
         color: 'black',
+        letterSpacing: 0.5
 
     },
+    InterMedium: {
+        fontFamily: "'Inter', sans-serif",
+        fontSize: 14,
+        color: 'black',
+        letterSpacing: 0.5,
+
+    },
+    InterBold : {
+        fontFamily: "'Inter', sans-serif",
+        fontSize: 14,
+        color: 'black',
+    }
 
 
 });
