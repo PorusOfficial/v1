@@ -78,15 +78,14 @@ const styles = StyleSheet.create({
   container : {
     flexDirection: 'row',
     width: '100%',
-    justifyContent: 'space-evenly',
-  },
+    justifyContent:'space-between'  },
   btn: {
     flexDirection: 'row',
     backgroundColor: '#C5C5E9',
     justifyContent: 'center',
-    gap: '10%',
+    gap: '5%',
     alignItems: 'center',
-    paddingHorizontal: 10,
+    paddingHorizontal: 8,
     paddingVertical: 2.5,
     borderRadius: 15,
     borderWidth: 2,

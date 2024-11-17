@@ -5,7 +5,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 //import OtpVerificationScreen from './screens/OtpVerificationScreen';
 //import ProfileSetups from './screens/ProfileSetups';
 //import BottomSheet from './components/bottomSheet/BottomSheet';
-import HomeScreen from './screens/HomeScreen';
+import HomeScreen from './screens/home/HomeScreen';
 import PostDetailScreen from './screens/PostDetailsScreen';
 
 const App = ()=>{
