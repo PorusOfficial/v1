@@ -14,19 +14,6 @@ import {Image} from 'react-native-svg';
 import EngageTab from '../components/engageBox/EngageTab';
 
 const PostDetailScreen = () => {
-  function handleUpVotePress(porps){
-    console.warn("up", porps )
-  }
-  function handleDownVotePress(porps){
-    console.warn("d", porps )
-  }
-  function handleCommentPress(){
-    console.warn("comment")
-  }
-  function handleSharePress(){
-    console.warn("share")
-  }
-
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -120,7 +107,6 @@ const PostDetailScreen = () => {
           />
 
           <Description />
-          <EngageTab e={{handleCommentPress, handleUpVotePress, handleSharePress, handleDownVotePress}} data={{up: '100k', down: '200k', comment: '200k', share: '100k', time: '50m'}}/>
           <View
             style={{
               flexDirection: 'row',
