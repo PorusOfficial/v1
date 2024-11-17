@@ -11,6 +11,7 @@ import LocIcon from '../assets/icons/LocIcon';
 import UserIcon from '../assets/icons/UserIcon';
 import HeartIcon from '../assets/icons/HeartIcon';
 import {Image} from 'react-native-svg';
+import EngageTab from '../components/engageBox/EngageTab';
 
 const PostDetailScreen = () => {
   return (
@@ -18,12 +19,10 @@ const PostDetailScreen = () => {
       <ImageBackground
         source={require('../assets/img/map.png')}
         resizeMode="cover"
-        style={styles.back}
-      >
+        style={styles.back}>
         <CustomBottomSheet snapPoint={['30%', '50%', '60%']}>
           <View style={{paddingHorizontal: 10, marginTop: 5}}>
-            <View
-              style={{flexDirection: 'row', gap:10}}>
+            <View style={{flexDirection: 'row', gap: 10}}>
               <SmallPrimaryButton
                 name="Broadcast"
                 onPress={() => {}}
@@ -108,7 +107,6 @@ const PostDetailScreen = () => {
           />
 
           <Description />
-
           <View
             style={{
               flexDirection: 'row',
