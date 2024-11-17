@@ -2,21 +2,27 @@ import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 import Theme from '../../styles/theme';
 
-const DownVIcon = ({width = 30, height = 30}) => {
+const DownVIcon = ({width = 30, height = 30, isFill=false}) => {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
       viewBox="0 0 24 24"
-      fill={Theme.colors.IconColor}>
+      fill={isFill ? Theme.colors.IconColor : 'none'}
+      transform="rotate(180, 0, 0)"
+      >
       <Path
-        fill="black"
+        d="M10.7902 13.4052V5.93377C10.7902 5.68612 10.8801 5.44861 11.0402 5.2735C11.2004 5.09839 11.4175 5.00001 11.644 5.00001H15.06C15.2865 5.00001 15.5036 5.09839 15.6637 5.2735C15.8239 5.44861 15.9138 5.68612 15.9138 5.93377V13.4052"
+        stroke="#344054"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <Path
+        d="M15.9135 13.4052L17.8007 12.0231C17.9835 11.8899 18.2062 11.8388 18.4226 11.8806C18.6389 11.9223 18.8322 12.0536 18.9623 12.2473L20.533 14.5348C20.6672 14.7312 20.7254 14.9774 20.695 15.2203C20.6646 15.4632 20.5481 15.6833 20.3707 15.833L13.8727 21.3621C13.7234 21.4881 13.5402 21.5564 13.3517 21.5564C13.1632 21.5564 12.9799 21.4881 12.8307 21.3621L6.33227 15.8335C6.15481 15.6837 6.03832 15.4636 6.00795 15.2207C5.97758 14.9779 6.03577 14.7316 6.16995 14.5353L7.74148 12.2473C7.87154 12.0538 8.06478 11.9225 8.28103 11.8808C8.49729 11.839 8.71994 11.89 8.90271 12.0231L10.7899 13.4052"
         stroke="black"
         stroke-linecap="round"
         stroke-linejoin="round"
-        stroke-width="4"
-        d="m5 24l19 18l19-18H31V6H17v18z"
       />
     </Svg>
   );
