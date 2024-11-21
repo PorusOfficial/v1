@@ -6,16 +6,16 @@ import Arrow from '../../assets/icons/Arrow';
 
 const NewsScreen = ({item}) => {
   function handleUpVotePress(val) {
-    console.warn('u', val);
+    console.log('u', val);
   }
   function handleDownVotePress(val) {
-    console.warn('d', val);
+    console.log('d', val);
   }
   function handleCommentPress() {
-    console.warn('commment');
+    console.log('commment');
   }
   function handleSharePress() {
-    console.warn('share');
+    console.log('share');
   }
   return (
     <View
@@ -23,62 +23,56 @@ const NewsScreen = ({item}) => {
         flex: 1,
         flexDirection: 'row',
         height: 108,
-        borderTopWidth: 5,
+        borderTopWidth: 3,
         borderColor: 'white',
       }}>
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <View
-          style={{
-            width: 15,
-            height: 15,
-            backgroundColor: 'red',
-            borderRadius: 3,
-          }}
-        />
+        <View style={[{backgroundColor: item.type, width:10, height:10, borderRadius:2}]} />
       </View>
-      <View style={{flex: 9, paddingVertical: 5}}>
+
+      <View style={{flex: 7, padding: 5}}>
         <TouchableOpacity
           activeOpacity={0.6}
           onPress={() => {
             console.log('NewsBox touched:', item);
           }}
           style={{flex: 1, height: 30, flexDirection: 'row'}}>
-          <View style={{flex: 2}}>
+          <View style={{flex: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
+            <View style={{flex: 1, flexDirection: 'row', alignItems: 'center',width:'80%'}}>
+              <Text
+                numberOfLines={1}
+                style={{
+                  fontSize: 18,
+                  fontWeight: '600',
+                  color: 'black',
+                  marginLeft: 5,
+                }}>
+                {item.title}
+              </Text>
+            </View>
+            {/*
+            // might change
             <Text
-              style={{
-                fontSize: 20,
-                color: 'black',
-              }}
-              numberOfLines={1}>
-              {item.title}
-            </Text>
-            <Text
+               numberOfLines={1}
               style={[
                 GlobalStyles.InriaLight,
-                {fontSize: 14, fontWeight: '700', color: '#545252', marginLeft:5},
-              ]}
-              numberOfLines={1}>
-              {item.location}
-            </Text>
-          </View>
-
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-            }}>
-            <Text
-              style={[
-                GlobalStyles.InriaLight,
-                {fontSize: 14, fontWeight: '700', color: '#1266ED'},
+                {fontSize: 13, fontWeight: '700', color: '#1266ED', marginRight: 5},
               ]}>
               {item.distance}
-            </Text>
+            </Text> */}
             <Arrow height={20} width={20} />
           </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
+          <View style={{flex: 1}}>
+            <Text
+              style={[
+                GlobalStyles.InriaLight,
+                {fontSize: 13, fontWeight: '700', color: '#1266ED', marginLeft: 5, letterSpacing: 1},
+              ]}
+              numberOfLines={1}>
+              {`${item.distance} meter from you`}
+            </Text>
+          </View>
         <View style={{flex: 1, justifyContent: 'center', width: '100%'}}>
           <EngageTab
             e={{

@@ -9,17 +9,7 @@ const data = [
       comments: '10k',
       shares: '20k',
       time: '10m',
-    },
-    {
-      id: 2,
-      title: 'Building collapse',
-      location: 'Sector 21, Noida',
-      distance: '1.2km',
-      upvotes: '15k',
-      downvotes: '500',
-      comments: '5k',
-      shares: '8k',
-      time: '15m',
+      type : 'red',
     },
     {
       id: 3,
@@ -31,6 +21,7 @@ const data = [
       comments: '3k',
       shares: '5k',
       time: '20m',
+      type : 'green'
     },
     {
       id: 4,
@@ -42,6 +33,19 @@ const data = [
       comments: '7k',
       shares: '10k',
       time: '25m',
+      type : 'orange'
+    },
+    {
+      id: 2,
+      title: 'Building collapse',
+      location: 'Sector 21, Noida',
+      distance: '1.2km',
+      upvotes: '15k',
+      downvotes: '500',
+      comments: '5k',
+      shares: '8k',
+      time: '15m',
+      type : 'red'
     },
   ];
   module.exports = data;
