@@ -1,11 +1,10 @@
 import React, {useCallback, useRef, useMemo} from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Dimensions} from 'react-native';
 import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 
 
-const CustomBottomSheet = ({ children, snapPoint }) => {
+const CustomBottomSheet = ({ children, snapPoint, bottomStyle }) => {
   const sheetRef = useRef(null);
-
 
   const snapPoints = useMemo(() => snapPoint , [snapPoint]);
 
@@ -16,11 +15,14 @@ const CustomBottomSheet = ({ children, snapPoint }) => {
         snapPoints={snapPoints}
         enableDynamicSizing={false}
         backgroundStyle={[{backgroundColor: '#F1F1FA'}, styles.bottomSheet]}
+        style={bottomStyle}
         handleComponent={null}
       >
           <View style={styles.line} />
         <BottomSheetScrollView contentContainerStyle={styles.contentContainer}>
-          {children}
+          <View style={{ flex: 1}}>
+            {children}
+          </View>
         </BottomSheetScrollView>
       </BottomSheet>
   );
@@ -37,13 +39,18 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 40,
     paddingTop : 20,
   },
-
+  contentContainer: {},
+  itemContainer: {
+    padding: 6,
+    margin: 6,
+    backgroundColor: '#eee',
+  },
   line :{
-    backgroundColor : 'grey',
+    backgroundColor : 'lightgray',
     width : 80,
     height: 5,
     alignSelf: 'center',
-    top : 10,
+    top : 15,
     borderRadius : 10,
     marginBottom : 30,
   }

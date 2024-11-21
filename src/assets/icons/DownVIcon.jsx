@@ -10,7 +10,7 @@ const DownVIcon = ({width = 30, height = 30, isFill=false}) => {
       height={height}
       viewBox="0 0 24 24"
       fill={isFill ? Theme.colors.IconColor : 'none'}
-      transform="rotate(180, 0, 0)"
+     
       >
       <Path
         d="M10.7902 13.4052V5.93377C10.7902 5.68612 10.8801 5.44861 11.0402 5.2735C11.2004 5.09839 11.4175 5.00001 11.644 5.00001H15.06C15.2865 5.00001 15.5036 5.09839 15.6637 5.2735C15.8239 5.44861 15.9138 5.68612 15.9138 5.93377V13.4052"
