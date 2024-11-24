@@ -12,14 +12,21 @@ import Theme from '../styles/theme';
 import SecondaryButtonWithIcon from '../components/button/SecondaryButtonWithIcon';
 import InputBox from '../components/inputBox/InputBox';
 import PrimaryButton from '../components/button/PrimaryButton';
+import BackButton from '../components/button/backButton/BackButton';
 
-const ProfileSetups = () => {
+const ProfileSetups = ({navigation}) => {
   const [name, setName] = useState('');
   const [userName, setuserName] = useState('');
 
   function emptyIcon() {
     return <></>;
   }
+
+  const handleFormSubmit = () =>{
+    console.log(`${name} ${userName}`);
+
+    navigation.navigate('Hometab');
+  };
 
   return (
     <KeyboardAvoidingView
@@ -28,7 +35,7 @@ const ProfileSetups = () => {
     >
       <ScrollView
         contentContainerStyle={{flexGrow: 1, gap: 30, paddingBottom: 30}}>
-        <View style={[GlobalStyles.body, {gap: 30, top: 70}]}>
+        <View style={[GlobalStyles.body, {gap: 30, paddingTop: '15%'}]}>
           <Text style={[GlobalStyles.InriaBold, {fontSize: 38}]}>
             Setup your profile
           </Text>
@@ -85,7 +92,7 @@ const ProfileSetups = () => {
             </Text>
           </View>
           <View style={{marginBottom: 50}}>
-            <PrimaryButton name={'Next'} onPress={() => ' '} />
+            <PrimaryButton name={'Next'} onPress={handleFormSubmit} />
           </View>
         </View>
       </ScrollView>

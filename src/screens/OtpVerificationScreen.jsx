@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import GlobalStyles from '../styles/GlobalStyle';
 import InputBox from '../components/inputBox/InputBox';
 import PrimaryButton from '../components/button/PrimaryButton';
-import { useSafeAreaFrame } from 'react-native-safe-area-context';
+import SecondaryButtonWithIcon from '../components/button/SecondaryButtonWithIcon';
 
 const OTPicon = () => {
   return (
@@ -21,11 +21,18 @@ const OTPicon = () => {
   );
 };
 
-const OtpVerificationScreen = () => {
+const OtpVerificationScreen = ({navigation}) => {
   const [otp, setOtp] = useState('');
 
+  const handleOtpSubmit = () =>{
+
+    console.log(otp);
+
+    navigation.navigate('SetupProfile');
+  };
+
   return (
-    <View style={[GlobalStyles.body, {gap: 36, top: 100}]}>
+    <View style={[GlobalStyles.body, {gap: 36, paddingTop: '15%'}]}>
       <Text style={GlobalStyles.InriaBold}>Verify OTP</Text>
 
       <View
@@ -40,11 +47,13 @@ const OtpVerificationScreen = () => {
       </Text>
       <InputBox placeholder={'Enter OTP'} Icon={OTPicon} value={otp} setValue={setOtp}/>
       <View>
-        <PrimaryButton name={'Enter'} onPress={() => ''} />
+        <PrimaryButton name={'Enter'} onPress={handleOtpSubmit} />
         <Text
           style={[GlobalStyles.InterRegular, {fontSize: 11, marginLeft: 10}]}>
           NOTE: don’t share OTP with any one.
         </Text>
+        <Text>{'\n'}</Text>
+        <SecondaryButtonWithIcon name={'Re-send'} onPress={()=> " "} />
       </View>
     </View>
   );

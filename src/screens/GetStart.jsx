@@ -6,7 +6,7 @@ import GlobalStyles from '../styles/GlobalStyle';
 import gettingStartedImage from '../assets//img/getting_started.png';
 import Danger from '../components/status/Danger';
 
-const GetStartedScreen = () => {
+const GetStartedScreen = ({navigation}) => {
 return (
     <View style={styles.getStartedContainer}>
         <ImageBackground
@@ -27,7 +27,7 @@ return (
                     </Text>
                     <PrimaryButton
                         name="Getting Start"
-                        onPress={() => {}}
+                        onPress={() => {navigation.navigate("Login")}}
                         style={styles.button}
                     />
                 </View>

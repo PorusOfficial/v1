@@ -4,7 +4,8 @@ const GlobalStyles = StyleSheet.create({
     body : {
         flex : 1,
         backgroundColor : 'white',
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
+        paddingTop: 20,
         margin  : 0,
 
     },

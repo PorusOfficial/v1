@@ -1,19 +1,30 @@
-import React, {useState} from 'react';
-import {Alert, FlatList, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import React, {useRef} from 'react';
+import {
+  Alert,
+  FlatList,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import CustomBottomSheet from '../../components/bottomSheet/BottomSheet';
 import UserIcon from '../../assets/icons/UserIcon';
 import MenuIcon from '../../assets/icons/MenuIcon';
 import GlobalStyles from '../../styles/GlobalStyle';
 
 import HeartIcon from '../../assets/icons/HeartIcon';
-import data from './data';
 import NewsScreen from './NewsScreen';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import CommentScreen from '../CommentScreen';
+import { Data } from './data';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
 
-  const i = () => {
-    return <></>;
+  const sheetRef = useRef(null);
+
+  //const {dismiss} = useBottomSheetModal();
+  const openCommentSheet = () => {
+    sheetRef.current?.present(); // Open the CommentScreen bottom sheet
   };
 
   return (
@@ -24,15 +35,21 @@ const HomeScreen = () => {
         style={{flex: 1}}>
         <View style={{flex: 1, justifyContent: 'space-between'}}>
           <View style={styles.header}>
-            <TouchableWithoutFeedback style={{flex: 1}} onPress={()=> Alert.alert("profile icon press")}>
+            <TouchableWithoutFeedback
+              style={{flex: 1}}
+              onPress={() => Alert.alert('profile icon press')}>
               <UserIcon />
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback style={{flex: 1, alignItems: 'flex-end'}} onPress={()=> Alert.alert("menu press")}>
+            <TouchableWithoutFeedback
+              style={{flex: 1, alignItems: 'flex-end'}}
+              onPress={() => ' '}>
               <MenuIcon />
             </TouchableWithoutFeedback>
           </View>
-
-          <CustomBottomSheet snapPoint={['40%', '60%', '90%']} bottomStyle={styles.bottomStyle}>
+          <CommentScreen sheetRef={sheetRef} />
+          <CustomBottomSheet
+            snapPoint={['40%', '60%', '90%']}
+            bottomStyle={styles.bottomStyle}>
             <View style={{marginBottom: 10, paddingHorizontal: 15}}>
               <Text style={{color: 'black', fontSize: 24}}>Arround you</Text>
               <Text
@@ -59,23 +76,28 @@ const HomeScreen = () => {
             </View>
             <FlatList
               scrollEnabled={false}
-              data={data}
-              renderItem={({item})=>(<NewsScreen item={item} />)}
-              keyExtractor={(item) => item.id.toString()}
+              data={Data}
+              renderItem={({item}) => (
+                <NewsScreen item={item} openCommentList={openCommentSheet} navigation={navigation} />
+              )}
+              keyExtractor={item => item.id.toString()}
               nestedScrollEnabled={true}
             />
-            <View style={{borderWidth:2, borderColor:'white'}} />
-          <View
-            style={styles.footer}>
-            <HeartIcon color="#1266ED" />
-            <Text
-              style={[
-                GlobalStyles.InriaRegular,
-                {fontSize: 11, fontWeight: '700', color: 'rgba(0, 0, 0, 0.75)'},
-              ]}>
-              Contrinute to community
-            </Text>
-          </View>
+            <View style={{borderWidth: 2, borderColor: 'white'}} />
+            <View style={styles.footer}>
+              <HeartIcon color="#1266ED" />
+              <Text
+                style={[
+                  GlobalStyles.InriaRegular,
+                  {
+                    fontSize: 11,
+                    fontWeight: '700',
+                    color: 'rgba(0, 0, 0, 0.75)',
+                  },
+                ]}>
+                Contrinute to community
+              </Text>
+            </View>
           </CustomBottomSheet>
         </View>
       </ImageBackground>
@@ -92,7 +114,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 10,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 
   itemContainer: {},
@@ -109,7 +131,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     width: '100%',
     position: 'relative',
-    bottom:0,
-    top: 100
-  }
+    bottom: 0,
+    top: 100,
+  },
 });

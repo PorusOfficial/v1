@@ -14,12 +14,19 @@ import UserIcon from '../assets/icons/UserIcon';
 import SecondaryButton from '../components/button/SecondaryButton';
 import FbIcon from '../assets/icons/FbIcon';
 import GIcon from '../assets/icons/GIcon';
-const LogInScreen = () => {
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+const LogInScreen = ({navigation}) => {
   const [emailOrMobile, setEmailOrMobile] = useState('');
+
+  const handleLogInPress = () =>{
+    console.log(emailOrMobile);
+
+    navigation.navigate('Otp')
+  }
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{flex: 1}}>
+      style={[GlobalStyles.body,{flex: 1}]}>
       <ScrollView contentContainerStyle={{flexGrow: 1, gap: 30}}>
         <View style={styles.header}>
           <Text
@@ -48,7 +55,8 @@ const LogInScreen = () => {
         <View style={{flex: 2, padding: 3, gap: 35, marginTop: 30}}>
           <InputBox placeholder={'mobile or email'} Icon={UserIcon} value={emailOrMobile} setValue={setEmailOrMobile}/>
           <View style={{gap: 5}}>
-            <PrimaryButton name={'Log in'} onPress={() => ' '} />
+            <PrimaryButton name={'Log in'} onPress={handleLogInPress} />
+            <TouchableWithoutFeedback onPress={()=>{navigation.navigate('Register')}}>
             <Text
               style={[
                 GlobalStyles.InterRegular,
@@ -61,6 +69,7 @@ const LogInScreen = () => {
               ]}>
               don't have account? sign up
             </Text>
+            </TouchableWithoutFeedback>
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
             <View style={styles.line} />

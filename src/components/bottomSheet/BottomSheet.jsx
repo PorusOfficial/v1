@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   line :{
     backgroundColor : 'lightgray',
-    width : 80,
+    width : 45,
     height: 5,
     alignSelf: 'center',
     top : 15,

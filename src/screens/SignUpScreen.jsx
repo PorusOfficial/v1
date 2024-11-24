@@ -15,19 +15,28 @@ import GIcon from '../assets/icons/GIcon';
 import LockIcon from '../assets/icons/LockIcon';
 import EmailIcon from '../assets/icons/EmailIcon';
 import PhoneIcon from '../assets/icons/PhoneIcon';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 
-const SignUpScreen = () => {
+const SignUpScreen = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [mobile, setMobile] = useState('');
     const [pwd, setPwd] = useState('');
     const [confirmPwd, setConfirmPwd] = useState('');
     //console.warn(`${email} ${mobile} ${pwd} ${confirmPwd}`)
+
+    const handleSignUpPress =()=>{
+        console.log(`${email} ${mobile} ${pwd} ${confirmPwd}`);
+
+        navigation.navigate('Otp')
+
+
+    }
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{flex: 1}}>
-      <ScrollView contentContainerStyle={{flexGrow: 1, gap: 50, paddingHorizontal: 10}}>
+      style={[GlobalStyles.body,{flex: 1}]}>
+      <ScrollView contentContainerStyle={{flexGrow: 1, gap: 50}}>
         <View style={styles.header}>
           <Text
             style={[
@@ -61,7 +70,8 @@ const SignUpScreen = () => {
             </View>
             <View style={{gap: 10}}>
                 <View>
-                <PrimaryButton name={'Register'} onPress={() => ' '} />
+                <PrimaryButton name={'Register'} onPress={handleSignUpPress} />
+                <TouchableWithoutFeedback onPress={()=>{navigation.navigate('Login');}}>
                 <Text
                 style={[
                     GlobalStyles.InterRegular,
@@ -74,6 +84,8 @@ const SignUpScreen = () => {
                 ]}>
                 already have account ? Login.
                 </Text>
+              </TouchableWithoutFeedback>
+
                 </View>
 
                 <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
