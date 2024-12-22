@@ -17,7 +17,7 @@ const AppNavigations = () => {
   return (
     <BottomSheetModalProvider>
     <NavigationContainer >
-      <Stack.Navigator initialRouteName='OnBoard' screenOptions={{ headerShown: false }} >
+      <Stack.Navigator initialRouteName='OnBoard' screenOptions={{ headerShown: false }} > 
         <Stack.Screen  name='OnBoard' component={GetStartedScreen}/>
         <Stack.Screen name='Login' component={LogInScreen} />
         <Stack.Screen name='Register' component={SignUpScreen} />
