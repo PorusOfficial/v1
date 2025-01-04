@@ -1,12 +1,13 @@
 import React from 'react';
 import Svg, {Path} from 'react-native-svg';
 
-const Arrow = ({width = 30, height = 30, color = '#1266ED'}) => (
+const Arrow = ({width = 30, height = 30, color = '#1266ED', left=false}) => (
   <Svg
     width={width}
     height={height}
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 -2 48 48" // Updated to fit the Path coordinates
+    viewBox="0 2 48 48" // Updated to fit the Path coordinates
+    rotation={left ? 180 : 0}
   >
     <Path
       fill="none"

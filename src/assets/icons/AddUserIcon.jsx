@@ -1,0 +1,36 @@
+import React from 'react';
+import Svg, {Path} from 'react-native-svg';
+
+const AddUserIcon = ({w = 24, h = 24, color = 'black'}) => {
+  return (
+    <Svg
+      width={w}
+      height={h}
+      viewBox="0 0 15 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <Path
+        d="M7.62374 6.71885C8.99674 6.71885 10.1098 5.50345 10.1098 4.00417C10.1098 2.50489 8.99674 1.28949 7.62374 1.28949C6.25073 1.28949 5.1377 2.50489 5.1377 4.00417C5.1377 5.50345 6.25073 6.71885 7.62374 6.71885Z"
+        stroke="black"
+        strokeLinecap='round'
+        strokeLinejoin="round"
+        strokeWidth={1.2}
+      />
+      <Path
+        d="M0.520508 15.6385C0.520508 12.2114 3.38265 9.43353 6.91318 9.43353M10.5 9V12.1482M10.5 12.1482H7.5H13.661H10.5ZM10.5 12.1482V15"
+        stroke="black"
+        strokeLinecap='round'
+        strokeLinejoin="round"
+        strokeWidth={1.2}
+      />
+    </Svg>
+  );
+};
+
+export default AddUserIcon;
+
+/* <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.62374 6.71885C8.99674 6.71885 10.1098 5.50345 10.1098 4.00417C10.1098 2.50489 8.99674 1.28949 7.62374 1.28949C6.25073 1.28949 5.1377 2.50489 5.1377 4.00417C5.1377 5.50345 6.25073 6.71885 7.62374 6.71885Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M0.520508 15.6385C0.520508 12.2114 3.38265 9.43353 6.91318 9.43353M10.5 9V12.1482M10.5 12.1482H7.5H13.661H10.5ZM10.5 12.1482V15" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+ */

@@ -9,6 +9,7 @@ import ProfileSetups from './screens/ProfileSetups';
 import BottomTabNav from './navigation/bottomTab/BottomTabNav';
 import PostDetailScreen from './screens/PostDetailsScreen';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import Profile from './screens/profile/Profile';
 
 
 const AppNavigations = () => {
@@ -17,7 +18,7 @@ const AppNavigations = () => {
   return (
     <BottomSheetModalProvider>
     <NavigationContainer >
-      <Stack.Navigator initialRouteName='OnBoard' screenOptions={{ headerShown: false }} >
+      <Stack.Navigator initialRouteName='Hometab' screenOptions={{ headerShown: false }} >
         <Stack.Screen  name='OnBoard' component={GetStartedScreen}/>
         <Stack.Screen name='Login' component={LogInScreen} />
         <Stack.Screen name='Register' component={SignUpScreen} />
@@ -25,6 +26,7 @@ const AppNavigations = () => {
         <Stack.Screen name='SetupProfile' component={ProfileSetups} />
         <Stack.Screen name='Hometab' component={BottomTabNav} />
         <Stack.Screen name='PostDetails' component={PostDetailScreen} />
+        <Stack.Screen name='Profile' component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
     </BottomSheetModalProvider>

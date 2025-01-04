@@ -45,7 +45,7 @@ const NewsScreen = ({item, navigation, openCommentList}) => {
           activeOpacity={0.6}
           onPress={() => {
             console.log('NewsBox touched:', item);
-            navigation.navigate('Post');
+            navigation.navigate('Post', {id: item.id});
           }}
           style={{flex: 1, height: 30, flexDirection: 'row'}}>
           <View

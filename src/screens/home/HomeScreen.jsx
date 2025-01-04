@@ -2,9 +2,11 @@ import React, {useRef} from 'react';
 import {
   Alert,
   FlatList,
+  Image,
   ImageBackground,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import CustomBottomSheet from '../../components/bottomSheet/BottomSheet';
@@ -26,7 +28,7 @@ const HomeScreen = ({navigation}) => {
   const openCommentSheet = () => {
     sheetRef.current?.present(); // Open the CommentScreen bottom sheet
   };
-
+  const userId = 23
   return (
     <>
       <ImageBackground
@@ -35,11 +37,12 @@ const HomeScreen = ({navigation}) => {
         style={{flex: 1}}>
         <View style={{flex: 1, justifyContent: 'space-between'}}>
           <View style={styles.header}>
-            <TouchableWithoutFeedback
-              style={{flex: 1}}
-              onPress={() => Alert.alert('profile icon press')}>
-              <UserIcon />
-            </TouchableWithoutFeedback>
+            <TouchableOpacity onPress={() => navigation.navigate('Profile', {id: userId})}>
+              <Image
+                source={require('../../assets/img/avtar/pic2.jpg')}
+                style={{width: 40, height: 40, borderRadius: 25}}
+              />
+            </TouchableOpacity>
             <TouchableWithoutFeedback
               style={{flex: 1, alignItems: 'flex-end'}}
               onPress={() => ' '}>
